@@ -11,17 +11,16 @@ import com.microsoft.identity.client.exception.MsalClientException
 import com.microsoft.identity.client.exception.MsalException
 import com.microsoft.identity.client.exception.MsalServiceException
 import com.microsoft.identity.client.exception.MsalUiRequiredException
-import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.plugin.common.MethodChannel
 
-class Msal(context: Context, activity: FlutterFragmentActivity?) {
+class Msal(context: Context, activity: Activity?) {
     internal val applicationContext = context
-    internal var activity: FlutterFragmentActivity? = activity
+    internal var activity: Activity? = activity
 
     lateinit var adAuthentication: IMultipleAccountPublicClientApplication
     lateinit var accountList: List<IAccount>
 
-    fun setActivity(activity: FlutterFragmentActivity) {
+    fun setActivity(activity: Activity) {
         this.activity = activity;
     }
 
